@@ -34,7 +34,7 @@ CM.Disp.FormatTime = function(time, format) {
 		}
 		str += s;
 	} else {
-		if (time > 86400) return format ? 'Over 24 hours' : '>24h';
+		if (time > 777600000) return format ? 'Over 9000 days!' : '>9000d';
 		time = Math.ceil(time);
 		var d = Math.floor(time / 86400);
 		var h = Math.floor(time % 86400 / 3600);
@@ -64,7 +64,7 @@ CM.Disp.GetTimeColor = function(price, bank, cps, time) {
 			text = '00:00:00:00:00';
 		}
 		else {
-			text = 'Ready';
+			text = 'Done!';
 		}
 	}
 	else {
@@ -153,7 +153,7 @@ CM.Disp.GetConfigDisplay = function(config) {
 CM.Disp.AddJscolor = function() {
 	CM.Disp.Jscolor = document.createElement('script');
 	CM.Disp.Jscolor.type = 'text/javascript';
-	CM.Disp.Jscolor.setAttribute('src', 'http://aktanusa.github.io/CookieMonster/jscolor/jscolor.js');
+	CM.Disp.Jscolor.setAttribute('src', 'https://aktanusa.github.io/CookieMonster/jscolor/jscolor.js');
 	document.head.appendChild(CM.Disp.Jscolor);
 }
 
@@ -753,10 +753,10 @@ CM.Disp.CreateFavicon = function() {
 CM.Disp.UpdateFavicon = function() {
 	if (CM.Config.Favicon == 1 && CM.Disp.lastGoldenCookieState) {
 		if (CM.Disp.goldenShimmer.wrath) {
-			CM.Disp.Favicon.href = 'http://aktanusa.github.io/CookieMonster/favicon/wrathCookie.ico';
+			CM.Disp.Favicon.href = 'https://aktanusa.github.io/CookieMonster/favicon/wrathCookie.ico';
 		}
 		else {
-			CM.Disp.Favicon.href = 'http://aktanusa.github.io/CookieMonster/favicon/goldenCookie.ico';
+			CM.Disp.Favicon.href = 'https://aktanusa.github.io/CookieMonster/favicon/goldenCookie.ico';
 		}
 	}
 	else {
@@ -1947,3 +1947,4 @@ CM.Disp.TooltipWrinklerCache = [];
 for (var i in Game.wrinklers) {
 	CM.Disp.TooltipWrinklerCache[i] = 0;
 }
+
